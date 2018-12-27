@@ -1,0 +1,17 @@
+Focus insertion sort
+
+know this 
+(k(k+1))/2 <=n
+~O(sqrt(n))
+
+
+on example 7 n=k^2 should be n=2^k
+
+exapmle 9, deffucntionEg9(n) is on test
+
+
+1.5 hour no computer, no notes, no help 
+
+focus homeworks
+
+question on linear probing

@@ -1,0 +1,5 @@
+leaves internal nodes
+depth: count from 0 for specific node
+height: count from 0 from highest to lowest
+degree: # of children(branches)(not grandchildren nodes)
+

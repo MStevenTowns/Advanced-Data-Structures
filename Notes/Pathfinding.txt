@@ -1,0 +1,17 @@
+Dijkstra's Algorithm
+Discovers shortest path from starting node and all other nodes
+uses priority queue
+
+begin w/ vertex u(color it grey), assume d=0
+adjacent are v:2, w:5, x:1
+assign distance to each one
+then go to node x(color it grey)
+assign distance to each of it's neighbor (if less than current d)
+
+NEVER LET WEIGHT <=0
+
+
+BINARY HEAP IS ON THE TEST
+
+special case in AVL Tree
+pseudo code on test

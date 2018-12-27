@@ -1,0 +1,53 @@
+vertex: node
+it may have a name called a "key"
+edge: arc connecting 2 nodes showing a relationship
+1-way: graph is directed "digraph"
+2-way: 
+
+weight: edges may be weighted to show that there is a cost go go from one node to another
+
+DEFINITION: a graph can be represented by G where G=(V,E)
+	v is a set of vertices and E is a set of edges.
+	each edge is a tuple (v,w) where w,v exist in V
+	we can add a third component to the edge tuple to represent weight
+	
+path: sequence of vertices that are connected by edges
+	represented as the sum of weights of all edges in the path
+graph with no cycles is called acyclic graph
+directed graph with no cycles is called a directed acyclic graph or a DAG
+
+graph ADT
+Graph() creates new empty
+addVertex(vert) adds instance of vertex
+...
+
+graph implementations
+adjacency matrix
+adjacency list
+
+matrix
+use 2d maatrix
+rows and columns of the matrix represent a vertex in the graph
+the value that is stored in the cell at the intersection of row v &column w indicates if there is an edge from vertex v to vertex w
+easy to implement
+inefficient to store (too much free space)
+
+adjacency list
+more space efficient
+keep master list of all the vertices in the graph object
+use dictionary rather than list
+allows compact rep of graph
+alows easy find all link to single vertex
+
+implemtation requires 2 classes
+
+depth First search:
+use queue
+start : enque each child node (if white, grey ones have been dealt with)
+deque first one,
+enque each of it's children
+repeat until end
+
+if you have used it, black
+if they are in queue color grey
+default white

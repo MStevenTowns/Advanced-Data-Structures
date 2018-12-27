@@ -1,0 +1,169 @@
+big O notation
+
+rule 1:dont dive in until understand input
+define input specs0
+
+efficiency
+running time
+space used(memory)
+
+effic as funct on inpus size
+	number of bits in inpus
+	number of data elements (number, points)
+
+
+measuring runnning time
+-how to measure?
+-experimental study
+1write a program that implements an algorithm
+...
+
+limitation
+-need to implement and test
+-only conducted on limited inputs
+-need same hardware and software to compare
+
+beyond experimental study
+-dev general methodology
+-this approach
+1uses high-level descrip of algorithm instead of testing one of timplementations
+2takes into account all possible inputs
+3allows one to evaluate the efficiency of any algorithm in a way that is independent of the hardware and software environment
+
+pseudo-code
+-mix of natural language and high-level programming concepts that describes the main ideas behind a generic implementation of a data strcture of algorithm
+-Eg: algorithm arrayMax(A,n)
+-input:array A storing n integers
+-outputmax element A
+CurrentMax <- A[0]
+for i <- (1 to n-1)
+    if currentMax<A[i] then currentMax <- A[i]
+return currentMax
+
+expression
+-use std math symbols for numeric +boolean
+-use <- for assignment
+
+analysis of algorithms
+-primitive operations: low level operation
+-in pseudo code
+1data movement(assign)
+2control(branch,subroutine call, return)
+3arithmetic and logical opps(addition, comparison)
+-by inspecting pseudo code we can count number of primitive opps executed by an algorithm
+
+example:sorting
+input:sequence of numbers
+output:permutation of sequence
+correctness(req for output)
+fore any given input get output where
+-b1<b2<...<..bn
+-b1, b2,...,bn is a permutation of a1,a2,..,a3
+Running Time
+-depends on
+-number of elements(n)
+-how(partially) sorted they are
+-the algorithm
+
+insertion sort
+input:a[1...n]array in  ints
+output:permutation of a such that a[1]<a[2]....
+
+for j<-2 to n do
+	key<-a[j]
+	//insert a[j] into the sorted seq
+	i<-j-1
+	while i>0 and a[i]>key
+	do a[i+1<-a[i]
+		i--
+	a{i+1]<-key
+
+analysis of insertion sort
+line by line to program
+cost	time
+c1	n	
+c2	n-1
+0	n-1
+c3	n-1
+c4	sum(2,n)Tj
+c5 	sum(2,n)Tj-1
+c6	sum(2,n)Tj-1
+c7	n-1
+Total time=n(c1+c2+c3+c7)+sum(2n)Tj(c4+c5+c6)-(c2+c3+c5+c6+c7)
+
+best/worst/average case
+Total time
+-best case:elements already sorted Tj=2, running time F(n) ie linear time
+-worst case:elements are sorted in inverse order Tj-j running time =f(n^2) ie quadratic time
+-average case: Tj=j/2 running time =f(n^2) ie quadratic time
+
+worst case is usually used: it is an upper bound and in certain application domains knowing worst case is most important
+for some algorithms worst case is fairly common
+
+asymtotic analysis
+-goal: simplif analysis of running time by getting rid of details which may be affected by specific implementation and hardware
+--like rounding 1,000,001=1,000,000
+--3n^2 -> n^2
+-capture the essence: how running time of an algorithm increases with the size of the input in the limit
+--asympotically more efficient algorthsm are best for small inputs
+
+asymptotic notaion
+-Big-O notation
+--asy upper bound
+--f(n)=O(g(n)), if there exist constants c and n0 such that f(n)<cg(n) for n>=n0
+--f(n) and g(n) are f(x) of non negative ints
+
+simple rule drop lower order terms and constant factors
+-50nlogn is Onlogn
+-7n-3 is O(n)
+note: even though 50nlogn is O(n^5) it is expected that such an approx be
+
+######### Stacks ##########
+9/20/16
+
+abstract data types - Object Oriented Bullshit
+ADT is a mathematically specified entity that defines a set of its intances, with:
+	a specific interface-collection of signatures of operations that can be invoked on an instance
+	a set of axioms-pre&post conditions that define the semantics of the operations(what operations do to instance of ADT, but NOT HOW
+
+types of operations:
+	constructors
+	access functions
+	manipulation procedures
+
+why discus them
+	specs for building solutions
+	high-level abstract discussion
+	encapsulate data structures and algorithms that implement them
+	separate issues of correctness and efficiency
+
+ex-Dynamic Set
+	we will deal with ADTs, instances of which are set of some type of elements
+		operations are provided that change the set
+	we call such class of ADTs dynamic sets
+
+stock span problem 0 the span s_i of a stock's price on a certain day i is the maximum number of consecutive days(up to the current day the price of the stock has been les than or equal to it's price on day i
+
+for i <- 0 to n-1 do
+	k<-0; done < false
+	while(k>=i) or done
+		if P[i-k] <=P[i] then k<-k+1
+			else done<-true
+	S[i]<-k
+return S
+USE STACK TO MAKE BETTER
+h(i)=-1
+s_i = i-h(i)
+while elem>=top of stack, pop
+if elem is less than top of stack, push
+efficient algor
+for i<-0
+
+9/29/16
+dictionaries
+-store elements for quick location using keys
+ex: bank accounts ID by account number
+abstract data of a database
+search return location of info, but not the info itself
+
+iterative procedure for binary search

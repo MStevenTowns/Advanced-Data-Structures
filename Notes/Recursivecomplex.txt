@@ -1,0 +1,7 @@
+inductive recursive call: each run reduces input space by 1(ie buble sort)
+
+Merge sort
+(Decomposition)
+take list, break into 2
+sort smaller list
+combine into 1 list

@@ -1,0 +1,22 @@
+Final Project Ranking
+
+really easy
+2(river crossing)
+3(span)
+4(array Query)
+
+more fun
+6(bridge Pathfinding)
+7(prison pathfinding)(total # paths)
+1(how many cities)
+
+
+?
+5(cube thing)
+
+
+2
+
+	2C
+1c
+	1c1m

@@ -1,0 +1,49 @@
+need to choose good hash fn
+-quick computation
+-uniform dist
+-good fn are very rare
+non-int keys:
+-turn key to int
+	remove hypen of 123-4567 to get 1234567
+-for string add up ascii values of chars in string
+-use std hash on resulting ints
+
+from keys to indices
+-mapping is called a hash function
+-hash function is usually composition of 2 maps a hash code map and a compression map
+--an essential requirement of the hash function is to **map equal keys to equal indeces**
+--a good hash function **minimizes probability of collisions**
+	hash code map: key => int
+	compression map: 
+popular hash-code maps
+1 int cast: for num types w/ 32 bit(4 byte) or less reinterpret the bits of the number as an int
+2 component sum: for num types w/ more than 32 bits(ex long and double), we can add teh 32 bit components
+-why is component sum hash code bad for strings
+--ex: STAR and RATS have the same value
+
+compression map
+-use remainder
+--h(k)=k%m ; k is key, m is table size
+-need to choose m
+-m=b^e  <= BAD practice
+--if m is a power of 2 h(k) gives the e least significant bits of k
+--all keys with the same ending go in the same place
+-m as a prime number  <= GOOD practice
+--helps ensure uniform dist
+--primes not too close to exact powers of 2
+
+Ex:
+-hash tabel for n=2000 char strings
+-dont mind exam 3 elem
+m=701
+
+use
+-h(k)=[m(k*A%1)]
+-K is key, m is table size, and A is constant
+	0<A<1
+steps
+-map0...k_max into 0..k_max*A
+-take fractional part(mod 1)
+-map it onto 0...m-1
+
+
